@@ -1,0 +1,1 @@
+I want to perform site suitability analysis for a new school in rural Tamil Nadu. Use parameters like land use, slope from DEM, proximity to roads and water bodies. Generate Chain-of-Thought reasoning and a JSON geospatial workflow using GDAL, WhiteboxTools, or QGIS APIsTraceback

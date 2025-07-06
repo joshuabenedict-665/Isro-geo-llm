@@ -1,0 +1,20 @@
+# Semi‑Automatic Classification Plugin (SCP)
+
+The SCP plugin enables supervised land cover classification in QGIS.
+
+## Key Features:
+- **Download** Sentinel‑2 or Landsat imagery within QGIS.
+- **Preprocess** images: band stacking, atmospheric correction.
+- **Spectral signature** library management.
+- **Classification algorithms**: Random Forest, Maximum Likelihood, etc.
+- **Post‑processing**: accuracy assessment, confusion matrix.
+- **NDVI and band arithmetic** operations.
+
+## Installation:
+Plugins → Manage and Install Plugins → Search “Semi-Automatic Classification Plugin” → Install.
+
+## Usage Steps:
+1. Load satellite imagery.
+2. Define ROI and create spectral signatures.
+3. Select algorithm and run classification.
+4. Review results and export land cover raster.

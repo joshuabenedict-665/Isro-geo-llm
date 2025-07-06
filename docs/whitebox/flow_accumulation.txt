@@ -1,0 +1,44 @@
+FlowAccumulationFullWorkflow
+Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.
+
+Parameters:
+
+Flag	Description
+-i, --dem	Input raster DEM file
+--out_dem	Output raster DEM file
+--out_pntr	Output raster flow pointer file
+--out_accum	Output raster flow accumulation file
+--out_type	Output type; one of 'cells', 'sca' (default), and 'ca'
+--correct_pntr	Optional flag to apply corerections that limit potential artifacts in the flow pointer
+--log	Optional flag to request the output be log-transformed
+--clip	Optional flag to request clipping the display max by 1%
+--esri_pntr	D8 pointer uses the ESRI style scheme
+Python function:
+
+
+wbt.flow_accumulation_full_workflow(
+    dem, 
+    out_dem, 
+    out_pntr, 
+    out_accum, 
+    out_type="Specific Contributing Area", 
+    correct_pntr=False, 
+    log=False, 
+    clip=False, 
+    esri_pntr=False, 
+    callback=default_callback
+)
+Command-line Interface:
+
+
+>>./whitebox_tools -r=FlowAccumulationFullWorkflow -v ^
+--wd="/path/to/data/" --dem='DEM.tif' ^
+--out_dem='DEM_filled.tif' --out_pntr='pointer.tif' ^
+--out_accum='accum.tif' --out_type=sca --log --clip 
+Source code on GitHub
+
+Author: Dr. John Lindsay
+
+Created: 28/06/2017
+
+Last Modified: 26/10/2023

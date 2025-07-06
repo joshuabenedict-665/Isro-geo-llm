@@ -1,0 +1,11 @@
+# WhiteboxTools – Extract Streams
+
+Extracts stream network from flow accumulation raster using threshold.
+
+**Usage**:
+whitebox_tools.exe --run="ExtractStreams"
+--accum="flow_acc.tif" --threshold=100
+--output="streams.tif"
+
+
+**Purpose**: For hydrological features — useful in road placement and flood risk analysis.

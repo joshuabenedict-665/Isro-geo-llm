@@ -1,0 +1,18 @@
+# MCDA Plugin for QGIS (Multi‑Criteria Decision Analysis)
+
+MCDA plugins support weighted raster overlay for site suitability.
+
+## Key Features:
+- **School Placement (MCDA)**: tailored for educational site analysis.
+- **RasterMCDA / WMCA**: generic weighted overlay of multiple raster layers.
+- Assign **weights** to input criteria (e.g., slope, land use, distance).
+- Output: **suitability index raster** visualizing best candidate areas.
+
+## Workflow:
+1. Prepare input `.tif` rasters (slope.tif, landuse.tif, roads_dist.tif).
+2. Assign **criteria and weights** in plugin interface.
+3. Run weighted overlay to produce a **site suitability map**.
+4. Export map as GeoTIFF for further analysis.
+
+### Installation:
+Plugins → Manage and Install Plugins → Search “MCDA” or “RasterMCDA” → Install.

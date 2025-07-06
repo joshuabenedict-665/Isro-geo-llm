@@ -1,0 +1,58 @@
+{
+  "name": "Site Suitability Analysis",
+  "description": "Assesses the suitability of a site based on land use and slope data.",
+  "inputs": [
+    {
+      "name": "land_use_data",
+      "type": "csv",
+      "description": "CSV file containing land use data (e.g., urban, rural, forest, etc.)"
+    },
+    {
+      "name": "slope_data",
+      "type": "csv",
+      "description": "CSV file containing slope data (e.g., incline, aspect, elevation)"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "suitability_scores",
+      "type": "table",
+      "description": "Table containing suitability scores for each site"
+    },
+    {
+      "name": "suitability_map",
+      "type": "map",
+      "description": "Map showing the suitability of each site"
+    }
+  ],
+  "steps": [
+    {
+      "name": "land_use_data_processing",
+      "type": "python",
+      "input": ["land_use_data"],
+      "output": ["processed_land_use_data"]
+    },
+    {
+      "name": "slope_data_processing",
+      "type": "python",
+      "input": ["slope_data"],
+      "output": ["processed_slope_data"]
+    },
+    {
+      "name": "site_suitability_analysis",
+      "type": "python",
+      "input": ["processed_land_use_data", "processed_slope_data"],
+      "output": ["suitability_scores"]
+    }
+  ],
+  "dependencies": [
+    {
+      "step": "land_use_data_processing",
+      "dependency": "slope_data_processing"
+    },
+    {
+      "step": "site_suitability_analysis",
+      "dependency": ["land_use_data_processing", "slope_data_processing"]
+    }
+  ]
+}

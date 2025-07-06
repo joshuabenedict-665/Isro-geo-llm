@@ -1,0 +1,32 @@
+# Working with Raster Data in QGIS
+
+## 17.1 Raster Properties
+- **Symbology**: Change display style (singleband grayscale, pseudocolor).
+- **Transparency**: Adjust transparency or set no-data transparency.
+- **Histogram & Rendering**: Analyze pixel values and adjust contrast.
+
+## 17.2 Raster Analysis
+- **Raster Calculator**: Perform arithmetic, logical, or conditional operations on rasters.
+  Example: `(dem@1 > 5) AND (ndvi@1 < 0.3)`
+- **Raster Alignment**: Use GDAL's Warp or “Align Raster” to match extents, resolution, projection.
+
+## 17.3 Georeferencer
+- Load non-georeferenced images (e.g., scanned maps).
+- Add control points and save the result as a GeoTIFF.
+
+## 17.1.1 Loading Raster Data
+- Use **Browser Panel** → browse `.tif` files → drag-and-drop into canvas.
+- To load multiple tiles, use **Build Virtual Raster (Catalog)** – merges them into a `.vrt` without creating a new file. :contentReference[oaicite:1]{index=1}
+
+## 17.1.3 Reprojecting & Merging
+- **Warp (Reproject)**: Reproject raster to new CRS using `Raster → Projections → Warp`.
+- **Merge**: Combine multiple rasters into one via `Raster → Miscellaneous → Merge`.
+
+## Practical QGIS `.tif` Workflow Examples
+
+1. _Load_ DEM (`.tif`): drag `.tif` into QGIS.
+2. _Reproject_ DEM: `Raster → Projections → Warp`.
+3. _Clip_ DEM by polygon: Processing Toolbox → `Clip Raster by Mask Layer`.
+4. _Analyze slope_: Raster Calculator expression or use WhiteboxTools.
+5. _Style output_: Layer Properties → Symbology → Singleband pseudocolor → apply color ramp.
+6. _Export results_: Right-click layer → Export → Save As → choose **GeoTIFF** format.

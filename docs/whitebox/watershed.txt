@@ -1,0 +1,10 @@
+# WhiteboxTools – Watershed Tool
+
+Delineates drainage basins for specified pour points.
+
+**Usage**:
+whitebox_tools.exe --run="Watershed"
+--d8_pntr="d8_pntr.tif" --pour_pts="points.shp"
+--output="watersheds.tif"
+
+**Purpose**: Defines contributing area boundaries — useful for suitability zones.
